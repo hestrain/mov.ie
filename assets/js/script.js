@@ -28,37 +28,57 @@ fetch(imdbUrl, imdbOptions)
       console.log(movie.y);
       console.log(movie.l);
       console.log(movie.i.imageUrl);
+      const movieId = movie.id;
+
+      getOTT(movieId);
     }
+
   });
-//url for OTT API
-const ottUrl = `https://streaming-availability.p.rapidapi.com/shows/search/title=${movieTitle}&series_granularity=show&show_type=movie&output_language=en`;
-const ottOptions = {
-  method: 'GET',
-	headers: {
-    'x-rapidapi-key': 'dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd',
-		'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
-	}
-};
-
-
-//try for OTT API
-fetch(ottUrl, ottOptions)
-  .then(function (response) {
+  
+  //try for OTT API
+  function getOTT (movieId) {
+    //url for OTT API
+    const ottUrl = `https://streaming-availability.p.rapidapi.com/shows/search/${movieId}&show_type=movie&output_language=en`;
+    const ottOptions = {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': 'dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd',
+        'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
+      }
+    };
+    fetch(ottUrl, ottOptions)
+    .then(function (response) {
     return response.json();
   })
-  .then(function (movies) {
-    console.log("MOVIES STREAM INFO \n----------");
-    console.log(movies);
+  .then(function (services) {
+    console.log(" STREAM INFO \n----------");
+    console.log(services);
     // TODO: Loop through the response
-    for (const movie of movies) {
-      console.log(movie.imdbid);
-      console.log(movie.title);
-      console.log(movie.releaseYear);
-      for (const service of movie.streamingOptions.us) {
-       if (service.type == "suscription") {
-       console.log(service.link);
-       console.log(service.service.id);
-       } 
-      }
-    }
+    // for (const movie of movies) {
+    //   console.log(movie.imdbid);
+    //   console.log(movie.title);
+    //   console.log(movie.releaseYear);
+    //   for (const service of movie.streamingOptions.us) {
+    //    if (service.type == "suscription") {
+    //    console.log(service.link);
+    //    console.log(service.service.id);
+    //    } 
+    //   }
+    // }
   });
+}
+
+
+// <!--JAVASCRIPT CODE-->
+var swiper = new Swiper(".progress-slide-carousel", {
+loop: true,
+fraction: true,
+autoplay: {
+  delay: 1200,
+  disableOnInteraction: false,
+},
+pagination: {
+  el: ".progress-slide-carousel .swiper-pagination",
+  type: "progressbar",
+},
+});
