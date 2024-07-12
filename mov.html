@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <script src="assets/js/script.js" ></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/mov.css" />
+    <title>🎥 Mov</title>
+  </head>
+
+  <!-- nav bar with title and search bar -->
+  <header>
+    <nav class="flex justify-between">
+      <a href="index.html">🎬🎥 Mov.Ie</a>
+      <!-- <ul>
+        <li class="text-3xl font-bold underline">
+          <a href="index.html">🎬Mov.Ie</a>
+        </li>
+        <li class="text-3xl font-bold underline">
+          <a href="mov.html">Search Bar</a>
+        </li>
+        <li class="text-3xl font-bold underline">
+          <a href="about.html">Search</a>
+        </li>
+      </ul> -->
+      <div>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search for a movie"
+        />
+        <button type="submit">Search</button>
+        <!-- <form action="mov.html" method="GET">
+              <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search for a movie"
+              />
+              <button type="submit">Search</button>
+          </form> -->
+      </div>
+    </nav>
+  </header>
+  <body>
+    <main class="flex justify-evenly items-stretch text-center">
+      <!-- our quote comes here -->
+      <aside class="basis-1/6 flex items-center">
+        <p>Quote: PAY US PLEASE ! 🙏🙏🙏🙏</p>
+      </aside>
+
+      <!-- This is where movie desction gets appended -->
+      <div class="basis-3/6 grow">
+        <section class="text-left">
+          <p>Title:</p>
+          <p>Year:</p>
+          <p>Run Time:</p>
+          <p>Director:</p>
+          <p>Actors:</p>
+          <p>Description:</p>
+        </section>
+
+        <!-- display all streaming sites -->
+        <article>
+          <h2 class="text-center">Available on:</h2>
+          <section class="flex justify-evenly">
+            <a href="">Streaming Site</a>
+            <a href="">Streaming Site</a>
+            <a href="">Streaming Site</a>
+            <a href="">Streaming Site</a>
+            <a href="">Streaming Site</a>
+            <!-- <div>Streaming Site</div>
+            <div>Streaming Site</div>
+            <div>Streaming Site</div>
+            <div>Streaming Site</div>
+            <div>Streaming Site</div> -->
+          </section>
+        </article>
+      </div>
+
+      <!-- this is where the movie poster comes -->
+      <aside class="basis-2/6">
+        <img
+          src="https://i.pinimg.com/originals/72/24/f6/7224f6d53614cedbf8cef516b705a555.jpg"
+          alt="movie poster"
+        />
+      </aside>
+    </main>
+
+    <!-- footer information -->
+    <!-- <footer class="bg-gradient-to-b from-red-800 to-black-400 p-4 text-center"> -->
+    <footer class="bg-red-800 text-white text-center p-2">
+      <h5>
+        Movies posted on this site provide links to third-party video services
+        through Internet. We do not directly produce or host videos. Please note
+        that the rights to all video information belong to the relevant
+        copyright holder and that related posts will be deleted upon request
+        from the rights holder.
+      </h5>
+      <h6>Contact Us: 123-456-7890</h6>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/mov.js"></script>
+  </body>
 </html>
