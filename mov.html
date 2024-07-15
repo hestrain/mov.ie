@@ -8,69 +8,85 @@
     <link rel="stylesheet" href="/assets/css/mov.css" />
     <title>🎥 Mov</title>
   </head>
-
-  <!-- nav bar with title and search bar -->
-  <header>
-    <nav class="flex justify-between">
-      <a href="index.html">🎬🎥 Mov.Ie</a>
-      <!-- <ul>
-        <li class="text-3xl font-bold underline">
-          <a href="index.html">🎬Mov.Ie</a>
-        </li>
-        <li class="text-3xl font-bold underline">
-          <a href="mov.html">Search Bar</a>
-        </li>
-        <li class="text-3xl font-bold underline">
-          <a href="about.html">Search</a>
-        </li>
-      </ul> -->
-      <div>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search for a movie"
-        />
-        <button type="submit">Search</button>
-        <!-- <form action="mov.html" method="GET">
-              <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search for a movie"
-              />
-              <button type="submit">Search</button>
-          </form> -->
-      </div>
-    </nav>
-  </header>
-  <body>
+  <body class="bg-gray-800 text-white min-h-screen flex flex-col">
+    <!-- nav bar with title and search bar -->
+    <header
+      class="bg-gradient-to-tr from-red-700 to-black-100 p-4 flex justify-between items-center"
+    >
+      <nav class="flex justify-between">
+        <a class="text-4xl font-bold" href="index.html">🎬🎥 Mov.Ie</a>
+        <div class="flex items-center gap-x-2">
+          <input
+            type="text"
+            id="tiny-input"
+            class="block w-full max-w-xs px-2.5 py-1.5 text-xs font-normal shadow-xs text-gray-900 bg-transparent border border-solid border-gray-300 rounded-full placeholder-gray-400 focus:outline-none leading-normal"
+            placeholder="name@pagedone.com"
+            required=""
+          />
+          <button
+            class="relative inline-flex items-center justify-center px-3 py-0.5 overflow-hidden font-medium text-white transition duration-300 ease-out border-1 border-white-500 rounded-lg shadow-md group"
+          >
+            <span
+              class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black-500 group-hover:translate-x-0 ease"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="black"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </span>
+            <span
+              class="absolute flex items-center text-base font-semibold justify-center w-full h-full text-black-500 transition-all duration-300 transform group-hover:translate-x-full ease"
+              >Search</span
+            >
+            <span class="relative text-base font-semibold invisible"
+              >Search</span
+            >
+          </button>
+        </div>
+      </nav>
+    </header>
     <main class="flex justify-evenly items-stretch text-center">
       <!-- our quote comes here -->
-      <aside class="basis-1/6 flex items-center">
-        <p>Quote: PAY US PLEASE ! 🙏🙏🙏🙏</p>
+      <!-- basis-1/6 taken out from aside class  -->
+      <aside class="flex items-center bg-black p-4 text-center">
+        <p class="text-xl mb-4">Quote: PAY US PLEASE ! <br />🙏🙏🙏🙏</p>
       </aside>
 
       <!-- This is where movie desction gets appended -->
-      <div class="basis-3/6 grow">
-        <section class="text-left" id="movie-info">
-          <p>Title:</p>
-          <p>Year:</p>
-          <p>Run Time:</p>
-          <p>Director:</p>
+      <div class="basis-3/6 grow p-4">
+        <section class="text-left p-4 bg-zinc-500 mb-4" id="movie-info">
+          <p class="p-2" id="title">Title:</p>
+          <p class="p-2" id="year">Year:</p>
+          <p class="p-2">Run Time:</p>
+          <p class="p-2" id="director">Director:</p>
           <p>Actors:</p>
-          <p>Description:</p>
+          <ul id="cast"></ul>
+          <!-- </p> -->
+          <!-- the p tag abmove is removed because it was giving an error
+            if you want to apply p tag to ul then we can try to sort that out too -->
+          <p class="p-2" id="desc">Description:</p>
         </section>
 
         <!-- display all streaming sites -->
-        <article>
+        <article class="bg-black p-2 text-2xl">
           <h2 class="text-center">Available on:</h2>
-          <section class="flex justify-evenly" id="streaming-info">
+          <section class="flex justify-evenly">
+            <ul id="streaming-info"></ul>
+            <!-- <a href="">Streaming Site</a>
             <a href="">Streaming Site</a>
             <a href="">Streaming Site</a>
             <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a>
+            <a href="">Streaming Site</a> -->
             <!-- <div>Streaming Site</div>
             <div>Streaming Site</div>
             <div>Streaming Site</div>
@@ -81,17 +97,17 @@
       </div>
 
       <!-- this is where the movie poster comes -->
-      <aside class="basis-2/6" id="poster-placement">
+      <aside class="basis-2/6 pt-4 pr-4 pb-4" id="poster-placement">
         <img
           src="https://i.pinimg.com/originals/72/24/f6/7224f6d53614cedbf8cef516b705a555.jpg"
           alt="movie poster"
+          id="poster"
         />
       </aside>
     </main>
-
     <!-- footer information -->
     <!-- <footer class="bg-gradient-to-b from-red-800 to-black-400 p-4 text-center"> -->
-    <footer class="bg-red-800 text-white text-center p-2">
+    <footer class="bg-gradient-to-tr from-red-800 to-black-400 p-4 text-center">
       <h5>
         Movies posted on this site provide links to third-party video services
         through Internet. We do not directly produce or host videos. Please note
@@ -101,7 +117,9 @@
       </h5>
       <h6>Contact Us: 123-456-7890</h6>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
     <script src="assets/js/mov.js"></script>
   </body>
 </html>
