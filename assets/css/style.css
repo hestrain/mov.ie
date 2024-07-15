@@ -1,7 +1,4 @@
-
-
-
-/* CSS Code for Carousel*/
+/* code for carousel */
 .swiper-wrapper {
     width: 100%;
     height: max-content !important;
@@ -9,7 +6,7 @@
     -webkit-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
     position: relative;
-    }
-    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: black !important;
-    }
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #4F46E5 !important;
+}
