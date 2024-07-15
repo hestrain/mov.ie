@@ -1,8 +1,3 @@
-// //movie title variable for both APIs
-// const movieTitle = `thegodfather`;
-// //this seems to be my api key for both APIs as well
-// const apiKey = 'dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd';
-
 // //url for IMDB API
 // const imdbUrl = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/${movieTitle}.json`;
 // //additional options for IMDB API
@@ -103,7 +98,28 @@ document.addEventListener('DOMContentLoaded', function () {
       onChange: (position) => {
           console.log(`changed to slider ${position}`);
       }
-  };
+
+    };
+    fetch(ottUrl, ottOptions)
+    .then(function (response) {
+    return response.json();
+  })
+  .then(function (services) {
+    console.log(" STREAM INFO \n----------");
+    console.log(services);
+    // TODO: Loop through the response
+    for (const movie of services) {
+      console.log(movie.title);
+      console.log(movie.releaseYear);
+      for (const service of service.streamingOptions.us) {
+       if (service.type == "suscription") {
+       console.log(service.link);
+       console.log(service.service.id);
+       } 
+      }
+    }
+  });
+}
 
   const carousel = new Carousel(carouselElement, items, options);
 
