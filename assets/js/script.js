@@ -1,5 +1,5 @@
 //movie title variable for both APIs
-const movieTitle = `thegodfather`;
+const movieTitle = `jumanji`;
 //this seems to be my api key for both APIs as well
 const apiKey = 'dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd';
 
@@ -54,17 +54,16 @@ fetch(imdbUrl, imdbOptions)
     console.log(" STREAM INFO \n----------");
     console.log(services);
     // TODO: Loop through the response
-    // for (const movie of movies) {
-    //   console.log(movie.imdbid);
-    //   console.log(movie.title);
-    //   console.log(movie.releaseYear);
-    //   for (const service of movie.streamingOptions.us) {
-    //    if (service.type == "suscription") {
-    //    console.log(service.link);
-    //    console.log(service.service.id);
-    //    } 
-    //   }
-    // }
+    for (const movie of services) {
+      console.log(movie.title);
+      console.log(movie.releaseYear);
+      for (const service of service.streamingOptions.us) {
+       if (service.type == "suscription") {
+       console.log(service.link);
+       console.log(service.service.id);
+       } 
+      }
+    }
   });
 }
 
