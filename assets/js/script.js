@@ -1,7 +1,9 @@
+<<<<<<< HEAD
 // //movie title variable for both APIs
 // const movieTitle = `thegodfather`;
 // //this seems to be my api key for both APIs as well
 // const apiKey = 'dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd';
+
 
 // //url for IMDB API
 // const imdbUrl = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/${movieTitle}.json`;
@@ -113,5 +115,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   carouselElement.querySelector('[data-carousel-next]').addEventListener('click', () => {
       carousel.next();
+
   });
-});
