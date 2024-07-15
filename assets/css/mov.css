@@ -1,0 +1,18 @@
+/* when screen gets smaller */
+@media screen and (max-width: 768px) {
+  /* the page now can be viewed eaiser on smaller screens */
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  /* adds padding on left side of the poster */
+  #poster-placement {
+    padding-left: 1rem;
+  }
+
+  /* removes quote section */
+  #quote {
+    display: none;
+  }
+}
