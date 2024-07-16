@@ -17,29 +17,29 @@ const searchButton = document.querySelector("#search-btn");
 
 //get movie from storage....
 let movie = JSON.parse(localStorage.getItem("movie"));
-
+console.log(movie);
 
 // for testing im setting hard movie and movie id, but eventually these will be from a user input
 //for testing purposes i'm setting this. in reality it'll be from user input
-const testMovie = {
-  id: "tt2283362",
-  title: "Jumanji: Welcome to the Jungle",
-  year: "2017",
-  posterUrl:
-    "https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-};
+// const testMovie = {
+//   id: "tt2283362",
+//   title: "Jumanji: Welcome to the Jungle",
+//   year: "2017",
+//   posterUrl:
+//     "https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+// };
 
 //setting ott key as a variable so its easier to change when we max out fetches
 const ottKey = "7e934c17e2mshcd85f90de49e405p139dacjsn81feb4b9bbf3"; //eliots key
 
-//setting localstorage
-const searchResults = JSON.parse(localStorage.getItem("searchResults")) || [];
-console.log(searchResults);
+// //setting localstorage
+// const searchResults = JSON.parse(localStorage.getItem("searchResults")) || [];
+// console.log(searchResults);
 
 //OTT API function
 function getOTT() {
   //url for OTT API
-  const ottUrl = `https://streaming-availability.p.rapidapi.com/shows/${testMovie.id}?output_language=en`;
+  const ottUrl = `https://streaming-availability.p.rapidapi.com/shows/${movie.id}?output_language=en`;
   const ottOptions = {
     method: "GET",
     headers: {
@@ -98,9 +98,9 @@ function getOTT() {
 
 //print final page stuff
 function renderPage() {
-  titleEl.textContent = `Title: ${testMovie.title}`;
-  yearEl.textContent = `Release Year: ${testMovie.year}`;
-  posterEl.setAttribute("src", testMovie.posterUrl);
+  titleEl.textContent = `Title: ${movie.title}`;
+  yearEl.textContent = `Release Year: ${movie.year}`;
+  posterEl.setAttribute("src", movie.posterInfo);
   getOTT();
 }
 
@@ -114,10 +114,10 @@ function searchHandler(event) {
   //log to check
   console.log(searchLine.value.trim());
   //set movie to what user searchd
-  movie = searchLine.value.trim();
+  search = searchLine.value.trim();
 
   //im storing it to localstorage just in case we need it in this format?
-  localStorage.setItem("movie", JSON.stringify(movie));
+  localStorage.setItem("search", JSON.stringify(search));
 
   //reser the searchbar
   $(searchLine).text = "";
