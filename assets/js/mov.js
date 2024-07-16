@@ -21,6 +21,10 @@ const searchButton = document.querySelector("#search-btn");
 let movie = JSON.parse(localStorage.getItem("movie"));
 console.log(movie);
 
+//gets the 3 most recent searches from localstorage
+const recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || []; //we want this to be an array of 3
+
+
 // for testing im setting hard movie and movie id, but eventually these will be from a user input
 //for testing purposes i'm setting this. in reality it'll be from user input
 // const testMovie = {
@@ -107,6 +111,19 @@ function renderPage() {
   yearEl.textContent = `Release Year: ${movie.year}`;
   posterEl.setAttribute("src", movie.posterInfo);
   getOTT();
+
+  //every time you land on this page that movie gets added to recent searches??? yeah
+if (recentSearches.length < 3) {
+  //add movie to end of recent searches
+  recentSearches.push(movie);
+} else if(recentSearches > 3) {
+  //bump out oldest search for newer search
+  recentSearches = recentSearches.pop();
+  recentSearches.splice(0, 0, movie);
+  
+}
+localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+console.log(recentSearches);
 }
 
 //call render page which calls the OTT streaming info function to fill out the page
