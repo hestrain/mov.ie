@@ -1,12 +1,6 @@
+let topFive = [];
+
 //code for API to load images on carousel
-const topFive = [];
-
-const carouselImg1 = document.querySelector("#carousel-img-1");
-const carouselImg2 = document.querySelector("#carousel-img-2");
-const carouselImg3 = document.querySelector("#carousel-img-3");
-const carouselImg4 = document.querySelector("#carousel-img-4");
-const carouselImg5 = document.querySelector("#carousel-img-5");
-
 function getTopFive() {
   const carouselInfoUrl = "https://imdb-top-100-movies.p.rapidapi.com/";
   const carouselInfoOptions = {
@@ -46,6 +40,25 @@ function getTopFive() {
       }
     });
 }
+
+//function to deal with search query
+function searchHandler(event) {
+  //prevent refresh
+  event.preventDefault();
+  //log to check
+  console.log(searchLine.value.trim());
+  //set movie to what user searchd
+  movie = searchLine.value.trim();
+
+  //im storing it to localstorage just in case we need it in this format?
+  localStorage.setItem("movie", JSON.stringify(movie));
+
+  //reser the searchbar
+  $(searchLine).text = "";
+  //take you to the search page NEEDS TO BE LAST THING IN FUNCTION
+  window.location.href = "./search.html";
+}
+
 
 // Code for Carousel
 document.addEventListener("DOMContentLoaded", function () {

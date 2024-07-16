@@ -2,8 +2,8 @@
 //let searchResults = JSON.parse(localStorage.getItem("searchResults")) || []; // commented out for testing
 
 //for testing im setting the localstorage item. DELETE ON REAL
-const testMovie = "barbie";
-localStorage.setItem("movie", JSON.stringify(testMovie));
+//const testMovie = "barbie";
+//localStorage.setItem("movie", JSON.stringify(testMovie));
 
 const movie = JSON.parse(localStorage.getItem("movie"));
 const imdbApi = "dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd";
