@@ -7,6 +7,8 @@ const descEl = document.querySelector("#desc");
 const posterEl = document.querySelector("#poster");
 const directorEl = document.querySelector("#director");
 const castEl = document.querySelector("#cast");
+const runTimeEl = document.querySelector("#runtime");
+const quoteEl = document.querySelector("#quote");
 
 //the input element of the searchbar so we can get data from it
 const searchLine = document.querySelector("#tiny-input");
@@ -47,7 +49,7 @@ function getOTT() {
       "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
     },
   };
-//fetch the data
+  //fetch the data
   fetch(ottUrl, ottOptions)
     .then(function (response) {
       //return data as json
@@ -65,10 +67,13 @@ function getOTT() {
       //print out the content of directors
       directorEl.textContent = `Director: ${services.directors[0]}`;
 
+      let minutes = services.runtime;
+      runTimeEl.textContent = `Runtime: ${minutes}  minutes`;
+
       //print each cast member as a list item
       for (let i = 0; i < services.cast.length; i++) {
         const actor = services.cast[i];
-       //create list element with actor name
+        //create list element with actor name
         const castMember = document.createElement("li");
         castMember.textContent = actor;
         //append actor to list
@@ -125,4 +130,5 @@ function searchHandler(event) {
   window.location.href = "./search.html";
 }
 
+//search event listener
 searchButton.addEventListener("click", searchHandler);
