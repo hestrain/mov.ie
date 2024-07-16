@@ -1,4 +1,16 @@
+//empty array for the top 5 imdb movies
 let topFive = [];
+
+//the input element of the searchbar so we can get data from it
+const searchLine = document.querySelector("#tiny-input");
+console.log(searchLine);
+
+//the button element of the searchbar for the event listener
+const searchButton = document.querySelector("#search-btn");
+
+//gets the document area to put the search history in
+const historySection = document.querySelector("#movie-history"); //add this ID into the div at 265ish within class searched-movie
+//also youll need to delete/comment out the divs under the bit above ^
 
 //code for API to load images on carousel
 function getTopFive() {
@@ -40,25 +52,6 @@ function getTopFive() {
       }
     });
 }
-
-//function to deal with search query
-function searchHandler(event) {
-  //prevent refresh
-  event.preventDefault();
-  //log to check
-  console.log(searchLine.value.trim());
-  //set movie to what user searchd
-  movie = searchLine.value.trim();
-
-  //im storing it to localstorage just in case we need it in this format?
-  localStorage.setItem("movie", JSON.stringify(movie));
-
-  //reser the searchbar
-  $(searchLine).text = "";
-  //take you to the search page NEEDS TO BE LAST THING IN FUNCTION
-  window.location.href = "./search.html";
-}
-
 
 // Code for Carousel
 document.addEventListener("DOMContentLoaded", function () {
@@ -143,4 +136,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//calls the function to get the top 5 imdb movies
 getTopFive();
+
+
+//function to deal with search query
+function searchHandler(event) {
+  //prevent refresh
+  event.preventDefault();
+  //log to check
+  console.log(searchLine.value.trim());
+  //set movie to what user searchd
+  search = searchLine.value.trim();
+
+  //im storing it to localstorage just in case we need it in this format?
+  localStorage.setItem("search", JSON.stringify(search));
+
+  //reser the searchbar
+  $(searchLine).text = "";
+  //take you to the search page NEEDS TO BE LAST THING IN FUNCTION
+  window.location.href = "./search.html";
+}
+
+//search event listener
+searchButton.addEventListener("click", searchHandler);
+
+//gets the 3 most recent searches from localstorage
+let recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || []; //we want this to be an array of 3
+
+renderRecentSearches();
+console.log(recentSearches);
+
+
+//function that renders the 3 most recently searched movies 
+function renderRecentSearches () {
+  for (let i = 0; i < recentSearches.length; i++) {
+    const movie = recentSearches[i];
+    console.log(movie);
+    //making a new button for the each search result object
+    //button that encompasses the rest of the info
+    const pastMovie = document.createElement("button");
+    pastMovie.setAttribute("style", "text-align: center");
+    pastMovie.setAttribute("class", "searched-movie w-1/3 h-40 bg-black-500 flex items-center justify-center")
+    //title el
+    const pastTitle = document.createElement("h4");
+    pastTitle.textContent = movie.title;
+    //poster el
+    const pastPoster = document.createElement("img");
+    pastPoster.setAttribute("style", "width: 100px");
+    pastPoster.setAttribute("src", movie.posterInfo);
+    pastPoster.setAttribute("id", movie.id);
+    pastPoster.setAttribute('class', "movie-poster")
+
+    //add it all together
+    pastMovie.append(pastTitle, pastPoster);
+    historySection.append(pastMovie);
+
+    }
+
+}
+
+//section that holds all the search results as buttons
+let movieButtons = document.querySelector("#movie-history");
+//event listener for which poster-button you click on
+movieButtons.addEventListener("click", function(event){
+  //log to figure out which one got pressed
+  const element = event.target;
+  console.log(element);
+  //it shoudl be an image and if so...
+  if (element.matches('img') === true) {
+    //get the id (which is the imdb id)
+    const clickedId = element.getAttribute('id');
+    console.log(clickedId);
+
+    //get the search result array to search through it
+    recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
+    console.log(recentSearches);
+    
+    //look through search result array to find marching id/imdb id
+    const result = recentSearches.find(({ id }) => id == clickedId);
+    console.log(result); //log to check
+    
+    //this is our final movie! set the result to the movie variable
+    movie = result;
+
+    //put the movie into local storage becuase we'll need it on the next page
+    localStorage.setItem("movie", JSON.stringify(movie));
+    //take us to the final movie info page
+    window.location.href = "./mov.html";
+  }
+})
