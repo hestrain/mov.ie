@@ -18,6 +18,8 @@ const testMovie = {
     "https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
 };
 
+const ottKey = "7e934c17e2mshcd85f90de49e405p139dacjsn81feb4b9bbf3"; //eliots key
+
 //setting localstorage
 const searchResults = JSON.parse(localStorage.getItem("searchResults")) || [];
 console.log(searchResults);
@@ -29,7 +31,7 @@ function getOTT() {
   const ottOptions = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd",
+      "x-rapidapi-key": ottKey,
       "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
     },
   };
