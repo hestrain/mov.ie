@@ -1,3 +1,32 @@
+/* Ensure sidebars span the entire height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body > .flex {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    height: calc(100vh - 100px); /* Adjusted height to exclude header and footer */
+    overflow-y: auto;
+}
+
+.main-content {
+    overflow-y: auto;
+}
+
+.carousel-img {
+    height: 100%;
+    object-fit: cover;
+}
+
 /* code for carousel */
 .swiper-wrapper {
     width: 100%;
@@ -7,6 +36,34 @@
     transition-timing-function: linear !important;
     position: relative;
 }
+
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     background: #4F46E5 !important;
+}
+
+/* Add genre link styles */
+.genre-link {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.genre-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.genre-link a:hover {
+    text-decoration: underline;
+    text-decoration-color: #8D0000;
+    
+}
+
+.movSize{
+    height: 500px;
+    width: 300px;
+}
+
+.imgSize{
+    height: 50px;
+    width: auto;
 }
