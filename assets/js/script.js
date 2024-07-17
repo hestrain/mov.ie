@@ -7,7 +7,6 @@ console.log(searchLine);
 
 //the button element of the searchbar for the event listener
 const searchButton = document.querySelector("#search-btn");
-
 //gets the document area to put the search history in
 const historySection = document.querySelector("#movie-history"); //add this ID into the div at 265ish within class searched-movie
 //also youll need to delete/comment out the divs under the bit above ^
@@ -229,3 +228,28 @@ movieButtons.addEventListener("click", function(event){
     window.location.href = "./mov.html";
   }
 })
+
+let genreButtons = document.querySelector("#genre-holder");
+//event listener for which poster-button you click on
+genreButtons.addEventListener("click", function (event) {
+  //log to figure out which one got pressed
+  const element = event.target;
+  console.log(element);
+  //it shoudl be an image and if so...
+  if (element.matches("a") === true) {
+    //get the id (which is the imdb id)
+    const clickedId = element.getAttribute("id");
+    console.log(element);
+    console.log(clickedId);
+
+    //get the search result array to search through it
+    let genreTopic = JSON.parse(localStorage.getItem("genreTopic"));
+    genreTopic = clickedId;
+    localStorage.setItem("genreTopic", JSON.stringify(clickedId));
+
+    console.log(genreTopic);
+
+    
+    window.location.href = "./genre.html";
+  }
+});
