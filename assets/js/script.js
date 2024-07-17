@@ -12,13 +12,15 @@ const searchButton = document.querySelector("#search-btn");
 const historySection = document.querySelector("#movie-history"); //add this ID into the div at 265ish within class searched-movie
 //also youll need to delete/comment out the divs under the bit above ^
 
+const topMovieApi = "7e934c17e2mshcd85f90de49e405p139dacjsn81feb4b9bbf3";
+
 //code for API to load images on carousel
 function getTopFive() {
   const carouselInfoUrl = "https://imdb-top-100-movies.p.rapidapi.com/";
   const carouselInfoOptions = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "dd3c89b192msh09ded43b9ec2715p10f2ffjsn7c51696fc6bd",
+      "x-rapidapi-key": topMovieApi,
       "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
     },
   };
