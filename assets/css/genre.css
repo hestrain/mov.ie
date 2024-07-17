@@ -1,0 +1,121 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1f2937; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+  .bg-gradient-to-tr {
+    background: linear-gradient(to top right, #f05336, #333333);
+    color: #ffffff;
+  }
+
+  .header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 300px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  #search-btn:hover {
+    background-color: #e14e32;
+  }
+
+  #search-btn {
+    background-color: #0a0909;
+    color: #832a2a;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #search-btn:hover {
+    background-color: #5f433e;
+  }
+  /* Main Content */
+  main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .genre-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .genre-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .genre-link:hover {
+    background-color: #f05336;
+  }
+
+  /* Footer */
+  footer {
+    background: linear-gradient(to top right, #f05336, #333333);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+  }
+
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer a:hover {
+    color: #e14e32;
+  }
