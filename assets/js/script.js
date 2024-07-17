@@ -148,6 +148,7 @@ function searchHandler(event) {
   console.log(searchLine.value.trim());
   //set movie to what user searchd
   search = searchLine.value.trim();
+  
 
   //im storing it to localstorage just in case we need it in this format?
   localStorage.setItem("search", JSON.stringify(search));
