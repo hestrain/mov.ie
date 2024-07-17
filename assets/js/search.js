@@ -8,8 +8,8 @@ console.log(searchLine); //to check
 //the button element of teh searchbar for the event listener
 const searchButton = document.querySelector("#search-btn");
 
-//get movie (last actual result) from storage....
-let movie = JSON.parse(localStorage.getItem("movie"));
+// //get movie (last actual result) from storage....
+// let movie = JSON.parse(localStorage.getItem("movie"));
 
 //get search term from storage
 let search = JSON.parse(localStorage.getItem("search"));
@@ -76,31 +76,7 @@ searchMovies();
 //print/render function for loading the results pn the page
 //for each item in array (up to 10)
 function printResults(searchResults) {
-  for (let i = 0; i < 10; i++) {
-    const movie = searchResults[i];
-    //making a new item for the each search result item
-    const resultItem = document.createElement("div");
-    resultItem.setAttribute("style", "text-align: center");
-    const resultTitle = document.createElement("h4");
-    resultTitle.textContent = movie.title;
-    const resultYear = document.createElement("p");
-    resultYear.textContent = movie.year;
-    resultTitle;
-    const resultPoster = document.createElement("img");
-    resultPoster.setAttribute("style", "width: 100px");
-    resultPoster.setAttribute("src", movie.posterInfo);
-
-    resultItem.append(resultPoster, resultTitle, resultYear);
-    if (i <= 5) {
-      //results 1-5 go on top row
-      movieZoneOne.append(resultItem);
-    } else if (i > 5) {
-      //results 6-10 go on bottom row
-      movieZoneTwo.append(resultItem);
-    }
-  }
-}
-
+  
 //onclick any of the posters or titles or whatever will take you to the mov page
 //it will store the searchResults / result / id of the chosen movie so that the mov page can generate the poster etc
 for (let i = 0; i < 10; i++) {
@@ -135,6 +111,7 @@ for (let i = 0; i < 10; i++) {
     movieZoneTwo.append(resultItem);
   }
 }
+}
 
 //function to deal with NEW search query
 function searchHandler(event) {
@@ -168,6 +145,7 @@ movieButtons.addEventListener("click", function (event) {
   if (element.matches("img") === true) {
     //get the id (which is the imdb id)
     const clickedId = element.getAttribute("id");
+    console.log(element);
     console.log(clickedId);
 
     //get the search result array to search through it
@@ -180,6 +158,8 @@ movieButtons.addEventListener("click", function (event) {
 
     //this is our final movie! set the result to the movie variable
     movie = result;
+
+    console.log(result);
 
     //put the movie into local storage becuase we'll need it on the next page
     localStorage.setItem("movie", JSON.stringify(movie));
