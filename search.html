@@ -15,7 +15,9 @@
         <div class="text-4xl font-bold">🎥 Mov.Ie</div>
         <div class="flex items-center gap-x-2">
             <input type="text" id="tiny-input" class="block w-full max-w-xs px-2.5 py-1.5 text-xs font-normal shadow-xs text-gray-900 bg-transparent border border-solid border-gray-300 rounded-full placeholder-gray-400 focus:outline-none leading-normal" placeholder="name@pagedone.com" required="">
-            <button class="relative inline-flex items-center justify-center px-3 py-0.5 overflow-hidden font-medium text-white transition duration-300 ease-out border-1 border-white-500 rounded-lg shadow-md group">
+            <button class="relative inline-flex items-center justify-center px-3 py-0.5 overflow-hidden font-medium text-white 
+            transition duration-300 ease-out border-1 border-white-500 rounded-lg shadow-md group"
+            id="search-btn">
                 <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black-500 group-hover:translate-x-0 ease">
                     <svg class="w-6 h-6" fill="black" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -36,7 +38,7 @@
         </aside>
 
         <!-- Main Content -->
-        <div class="flex-grow flex flex-col justify-between">
+        <div class="flex-grow flex flex-col justify-between" id="movie-results">
             <article class="mt-8">
                 <h2 class="text-center text-3xl font-bold mb-8"></h2>
                 <div class="mb-8 flex justify-center">
@@ -67,6 +69,8 @@
         <p>Movies posted on this site provide links to third-party video services through the Internet. We do not directly produce or host videos. Please note that the rights to all video information belong to the relevant copyright holder and that related posts will be deleted upon request from the rights holder.</p>
         <p>Contact Us: 123-456-7890</p>
     </footer>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
  <script src="assets/js/search.js"></script>
 </body>
 </html>
