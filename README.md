@@ -30,7 +30,7 @@ Once completely built, this application will function as a deployed app on Githu
 1. Clone the rep
 
 ```
-git clone https://github.com/jazztazz1991/Parsemon.git
+git clone https://github.com/hestrain/mov.ie.git
 ```
 
 2. Right click on index.html and open in browser to enjoy locally!
