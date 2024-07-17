@@ -74,7 +74,7 @@ function searchByGenre(genreTopic) {
         const genreItem = {
           id: genreMovie.id,
           title: genreMovie.original_title,
-          poster: genreMovie.poster_path,
+          posterInfo: genreMovie.poster_path,
         };
         console.log(genreItem);
         genreList.push(genreItem);
@@ -111,7 +111,7 @@ function printResults(genreList) {
     //poster el
     const resultPoster = document.createElement("img");
     resultPoster.setAttribute("style", "width: 100px");
-    resultPoster.setAttribute("src", movie.poster);
+    resultPoster.setAttribute("src", movie.posterInfo);
     resultPoster.setAttribute("id", movie.id);
     resultPoster.setAttribute("class", "movie-poster");
   
@@ -165,11 +165,11 @@ function printResults(genreList) {
       console.log(clickedId);
   
       //get the search result array to search through it
-      searchResults = JSON.parse(localStorage.getItem("searchResults"));
-      console.log(searchResults);
+      genreList = JSON.parse(localStorage.getItem("genreList"));
+      console.log(genreList);
   
       //look through search result array to find marching id/imdb id
-      const result = searchResults.find(({ id }) => id == clickedId);
+      const result = genreList.find(({ id }) => id == clickedId);
       console.log(result); //log to check
   
       //this is our final movie! set the result to the movie variable
@@ -180,6 +180,7 @@ function printResults(genreList) {
       //put the movie into local storage becuase we'll need it on the next page
       localStorage.setItem("movie", JSON.stringify(movie));
       //take us to the final movie info page
+
       window.location.href = "./mov.html";
     }
   });
