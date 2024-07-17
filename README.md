@@ -68,8 +68,7 @@
 <!-- Add screenshots using the following format: -->
 <!-- ![Screenshot alt description](directPathOfScreenshots) -->
 
-This project was built with vanilla JS/CSS/HTML with the help of APIs in order to show our students an example project.
-It's currently not deployed until the prototype MVP is completed.
+This Project was Created in order for you to Find your Favorite Movies and know where you can watch them. You would search for any movie using the search bar and It would take you to that movie along with all details related to it and it will also include what streaming platforms you can watch it on. You also have the option to select a genre and it will give you a list of movies related to that genre. Then you can selct the movie you are interested in.
 
 ### Built With
 
@@ -107,25 +106,17 @@ git clone https://github.com/jazztazz1991/Parsemon.git
 
 Once the app is functional, screenshots will be added in this section.
 
-<!-- ROADMAP -->
-
-## Roadmap
-
-<!-- TODO: Build Roadmap with Cody's Github issues -->
-
-#### MVP
-
-- [ ] Feature
-  - [ ] Feature detail
-  - [ ] Feature detail
-
 #### Future Development
 
-- [ ] Feature
-- [ ] Feature
-- [ ] Feature
-
-See the [open issues](https://github.com/jazztazz1991/Parsemon/issues) for a full list of proposed features (and known issues).
+In the Future we thought of 
+- Making it mobile friendly with a mobile interface
+- We  thought about making everything apear more professional.
+- We thought about adding shows. 
+- Making a watched history
+- Adding a feature to be able to mark something as watched. 
+- Choosing which country you are watching the movie or show from. 
+- Add more search filters. 
+- Adding a way for us to make money... maybe a subscription. 
 
 <!-- CONTRIBUTING -->
 
@@ -164,7 +155,7 @@ Project Links:
 
 <!-- TODO- add FIGMA board -->
 
-[Figma Board- link later]()
+[Figma Board- link later](https://www.figma.com/board/sxrQHryd75vygmZsIamCQi/Mov.Ie?node-id=16-1450&t=JydsK2lQMzdzFSDx-1)
 
 [Github Repository](https://github.com/jazztazz1991/Parsemon)
 
@@ -176,4 +167,4 @@ Project Links:
 
 ## Acknowledgments
 
-Mary would like to give a big shoutout to my partner in crime and daughter, Yennefer! Every day she proves she is small yet mighty! She would also like to thank all of her students in the Spring 2024 UCF Full Stack Bootcamp for being a fantastic cohort!
+SHOUTOUT to Heather for absolutely carrying this team on her shoulders doing the javascript work and helping fix our issues. 
