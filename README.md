@@ -1,66 +1,3 @@
-<div align="center">
-
-  <!-- Add badges using the following format: -->
-  <!-- ![Name](urlToShieldHere)(urlToGithubHere) -->
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributors](https://img.shields.io/github/contributors/jazztazz1991/Parsemon.svg?style=plastic&logo=appveyor)](https://github.com/jazztazz1991/Parsemon/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/jazztazz1991/Parsemon.svg?style=plastic&logo=appveyor)](https://github.com/jazztazz1991/Parsemon/network/members)
-[![Stargazers](https://img.shields.io/github/stars/jazztazz1991/Parsemon.svg?style=plastic&logo=appveyor)](https://github.com/jazztazz1991/Parsemon/stargazers)
-[![Issues](https://img.shields.io/github/issues/jazztazz1991/Parsemon.svg?style=plastic&logo=appveyor)](https://github.com/jazztazz1991/Parsemon/issues)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=appveyor&logo=linkedin&colorB=555)](https://linkedin.com/in/jazztazz1991)
-
-</div>
-
-<!-- PROJECT LOGO -->
-
-<div align="center">
-  <a href="https://github.com/jazztazz1991/Parsemon">
-    <img src="./assets/images/logo-main.svg" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Parsemon</h3>
-
-  <p align="center">
-    Brought to you by 2U's Teacher's Assistants Cody Chase and Mary Elenius<br />
-    <a href="https://github.com/jazztazz1991/Parsemon"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <!-- TODO- add deployed link -->
-    <a href="https://github.com/jazztazz1991/Parsemon">View Demo(Coming Soon)</a>
-    ·
-    <a href="https://github.com/jazztazz1991/Parsemon/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/jazztazz1991/Parsemon/issues">Request Feature</a>
-
-  </p>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -77,10 +14,8 @@ This Project was Created in order for you to Find your Favorite Movies and know 
 [![Javascript](https://img.shields.io/badge/Language-JavaScript-ff0000?style=plastic&logo=JavaScript&logoWidth=10)](https://javascript.info/)
 [![HTML](https://img.shields.io/badge/Language-HTML-ff8000?style=plastic&logo=HTML5&logoWidth=10)](https://html.com/)
 [![CSS](https://img.shields.io/badge/Language-CSS-ffff00?style=plastic&logo=HTML5&logoWidth=10)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Materialize](https://img.shields.io/badge/Framework-Materialize-80ff00?style=plastic&logo=jQuery&logoWidth=10)](https://materializecss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Framework-Materialize-80ff00?style=plastic&logo=jQuery&logoWidth=10)](https://tailwindcss.com/)
 [![VS Code](https://img.shields.io/badge/IDE-VSCode-0000ff?style=plastic&logo=VisualStudioCode&logoWidth=10)](https://code.visualstudio.com/docs)
-[![PokemonTCGApi](https://img.shields.io/badge/API-PokemonTCG-8000ff?style=plastic&logo=VisualStudioCode&logoWidth=10)](https://pokemontcg.io/)
-[![jQuery](https://img.shields.io/badge/API-jQuery-ff00ff?style=plastic&logo=jQuery&logoWidth=10)](https://jquery.com/)
 
 </div>
 
@@ -133,23 +68,17 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
-<!-- LICENSE -->
-
-## License
-
-This project is licensed under the MIT license.
-
-See LICENSE.txt for more information.
-
 <!-- CONTACT -->
 
 ## Contact
 
-[Mary Elenius](https://maryelenius.com/d20) - mary.panda.jackson@gmail.com
+[Alexander Diaz](https://github.com/aadiaz10)
 
-<!-- TODO- add cody's email if he wants -->
+[HeatherEllen Strain](https://github.com/hestrain)
 
-[Cody Chase](https://github.com/jazztazz1991) - [TODO- cody's email will go here]
+[Eliot Cho](https://github.com/EliotCho)
+
+[Derick Hernandez](https://github.com/appleinmyface)
 
 Project Links:
 
@@ -157,11 +86,7 @@ Project Links:
 
 [Figma Board- link later](https://www.figma.com/board/sxrQHryd75vygmZsIamCQi/Mov.Ie?node-id=16-1450&t=JydsK2lQMzdzFSDx-1)
 
-[Github Repository](https://github.com/jazztazz1991/Parsemon)
-
-<!-- TODO- add deployment link -->
-
-[Deployment- link later]()
+[Github Repository](https://github.com/hestrain/mov.ie)
 
 <!-- ACKNOWLEDGMENTS -->
 
