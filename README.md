@@ -39,7 +39,12 @@ git clone https://github.com/hestrain/mov.ie.git
 
 ## Usage
 
-Once the app is functional, screenshots will be added in this section.
+Here are some in progress screenshots of the apps current functionality: 
+![mov-ie-index](https://github.com/user-attachments/assets/3d875f46-2b18-4d5d-9b05-50e6e87a4422)
+![mov-it-search](https://github.com/user-attachments/assets/a22410b6-7c20-4986-8feb-b02ff3b80a81)
+![mov-ie-genre](https://github.com/user-attachments/assets/55cd6629-5dc7-4ee2-a925-532cc89f03f2)
+![mov-ie-mov](https://github.com/user-attachments/assets/15b62075-6e8a-485d-96be-334e4fc3849b)
+
 
 #### Future Development
 
