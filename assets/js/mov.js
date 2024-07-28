@@ -1,6 +1,9 @@
 //variables of needed document elements
 const movieZone = document.querySelector("#movie-info");
 const streamingZone = document.querySelector("#streaming-info");
+const buyZone = document.querySelector("#buy-info");
+const rentZone = document.querySelector("#rent-info");
+
 const titleEl = document.querySelector("#title");
 const yearEl = document.querySelector("#year");
 const descEl = document.querySelector("#desc");
@@ -24,6 +27,12 @@ console.log(movie);
 //gets the 3 most recent searches from localstorage
 const recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || []; //we want this to be an array of 3
 
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+  );
+}
 
 // for testing im setting hard movie and movie id, but eventually these will be from a user input
 //for testing purposes i'm setting this. in reality it'll be from user input
@@ -80,6 +89,7 @@ function getOTT() {
         //create list element with actor name
         const castMember = document.createElement("li");
         castMember.textContent = actor;
+        castMember.setAttribute("style", "list-style:square; margin-left: 20px");
         //append actor to list
         castEl.append(castMember);
         //log to check
@@ -91,15 +101,57 @@ function getOTT() {
         if (service.type == "subscription") {
           console.log(service.link);
           console.log(service.service.id);
-
+          const container = document.createElement("div");
+          container.setAttribute("class", "box-border h-32 w-32 p-4 border-1 border-red-300 text-center")
           //then add new link element to the streaming info section
           const siteLinkEl = document.createElement("a");
           //set href to steam link and text to stream service name
           siteLinkEl.setAttribute("href", service.link);
-          siteLinkEl.textContent = service.service.id;
-
+          siteLinkEl.setAttribute("class", "text-3xl text-sky-100 bg-red-700 hover:text-sky-500 hover:bg-red-200 p-1 m-1");
+          siteLinkEl.textContent = toTitleCase(service.service.id);
+          const def = document.createElement("p");
+          def.textContent = `Quality: ${service.quality}`;
+          def.setAttribute("class", "text-sm"); 
+          container.append(siteLinkEl, def);
           //append to the streaming info section
-          streamingZone.append(siteLinkEl);
+          streamingZone.append(container);
+        }  if (service.type == "buy") {
+          //then add new link element to the purchase info section
+          const container = document.createElement("div");
+          container.setAttribute("class", "box-border h-32 w-32 p-4 border-1 border-red-300 text-center")
+          const siteLinkEl = document.createElement("a");
+          const price = document.createElement("p");
+          price.setAttribute("class", "text-sm"); 
+          price.textContent = service.price.formatted;
+          const def = document.createElement("p");
+          def.textContent = `Quality: ${service.quality}`;
+          def.setAttribute("class", "text-sm"); 
+          //set href to steam link and text to purchase service name
+          siteLinkEl.setAttribute("href", service.link);
+          siteLinkEl.setAttribute("class", "text-l text-sky-100 bg-red-600 hover:text-sky-500 hover:bg-red-200 p-1 m-1");
+          siteLinkEl.textContent = toTitleCase(service.service.id);
+
+          container.append(siteLinkEl, price, def);
+          //append to the streaming info section
+          buyZone.append(container);
+        }  if (service.type == "rent") {
+          //then add new link element to the rent info section
+          const container = document.createElement("div");
+          container.setAttribute("class", "box-border h-32 w-32 p-4 border-3 border-red-500 text-center")
+          const siteLinkEl = document.createElement("a");
+          const price = document.createElement("p");
+          price.setAttribute("class", "text-sm"); 
+          price.textContent = service.price.formatted;
+          const def = document.createElement("p");
+          def.setAttribute("class", "text-sm"); 
+          def.textContent = `Quality: ${service.quality}`;
+          //set href to steam link and text to rent service name
+          siteLinkEl.setAttribute("href", service.link);
+          siteLinkEl.setAttribute("class", "text-xl text-sky-100 bg-red-600 hover:text-sky-500 hover:bg-red-200 p-1 m-1");
+          siteLinkEl.textContent = toTitleCase(service.service.id);
+
+          container.append(siteLinkEl, price, def);
+          rentZone.append(container);
         }
       }
     });
@@ -107,8 +159,8 @@ function getOTT() {
 
 //print final page stuff
 function renderPage() {
-  titleEl.textContent = `Title: ${movie.title}`;
-  yearEl.textContent = `Release Year: ${movie.year}`;
+  titleEl.textContent += ` ${movie.title}`;
+  yearEl.textContent += ` ${movie.year}`;
   posterEl.setAttribute("src", movie.posterInfo);
   getOTT();
 
@@ -116,7 +168,7 @@ function renderPage() {
 if (recentSearches.length < 3) {
   //add movie to end of recent searches
   recentSearches.push(movie);
-} else if(recentSearches > 3) {
+} else if(recentSearches == 3) {
   //bump out oldest search for newer search
   recentSearches = recentSearches.pop();
   recentSearches.splice(0, 0, movie);

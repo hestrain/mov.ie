@@ -68,7 +68,7 @@
       <!-- This is where movie desction gets appended -->
       <div class="basis-3/6 grow p-4">
         <section class="text-left p-4 bg-zinc-500 mb-4" id="movie-info">
-          <p class="p-2" id="title">Title:</p>
+          <p class="p-2" id="title">Title: </p>
           <p class="p-2" id="year">Year:</p>
           <p class="p-2" id="runtime">Run Time:</p>
           <p class="p-2" id="director">Director:</p>
@@ -82,19 +82,23 @@
 
         <!-- display all streaming sites -->
         <article class="bg-black p-2 text-2xl">
-          <h2 class="text-center">Available on:</h2>
+          <h2 class="text-center mt-1">Available to <strong>Stream</strong> on:</h2>
           <section class="flex justify-evenly">
-            <ul id="streaming-info"></ul>
-            <!-- <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a>
-            <a href="">Streaming Site</a> -->
-            <!-- <div>Streaming Site</div>
-            <div>Streaming Site</div>
-            <div>Streaming Site</div>
-            <div>Streaming Site</div>
-            <div>Streaming Site</div> -->
+              <div class="pt-4 pb-2 text-base font-semibold leading-7 flex" id="streaming-info">
+                <!-- Available streaming sites will go here -->
+              </div>
+          </section>
+          <h2 class="text-center mt-1">Available to <strong>Rent</strong> on:</h2>
+          <section class="flex justify-evenly">
+              <div class="pt-4 text-base font-semibold leading-7 flex" id="rent-info">
+                <!-- Available renting sites will go here -->
+              </div>
+          </section>
+          <h2 class="text-center mt-1">Available to <strong>Purchase</strong> on:</h2>
+          <section class="flex justify-evenly">
+              <div class="pt-2 text-base font-semibold leading-7 flex" id="buy-info">
+                <!-- Available purchase sites will go here -->
+              </div>
           </section>
         </article>
       </div>
